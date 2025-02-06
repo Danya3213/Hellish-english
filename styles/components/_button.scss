@@ -1,0 +1,53 @@
+button {
+
+    max-height: 70px;
+    min-height: 48px;
+    min-width: 260px;
+    @include typography (14px, 17px, 0.14em, 700);
+    text-transform: uppercase;
+
+    &[class*="--transparent"] {
+
+        @include hover {
+
+            background-color: var(--color-orange);
+            color: var(--color-white);
+        }
+
+        &, &:active {
+
+            border: 2px solid var(--color-orange);
+            color: var(--color-orange);
+            background-color: transparent;
+            padding: 15px 25px;
+
+            @media (max-width: 1150px) {
+            
+                padding: 13px 5px;
+            }
+        }
+    }
+
+    &[class*="--orange"] {
+
+        @include hover {
+
+            border: 2px solid var(--color-orange);
+            color: var(--color-orange);
+            background-color: transparent;
+        }
+
+        &, &:active {
+
+            background-color: var(--color-orange);
+            color: var(--color-white);
+            padding: 26px 70px;
+            border: 2px solid transparent;
+
+            @media (max-width: 1150px) {
+            
+                padding: 14px 21px;
+            }
+        }
+    }
+}

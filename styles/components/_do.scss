@@ -1,0 +1,96 @@
+@mixin do-hover {
+
+    .do__list-item:hover & {
+
+        @content;
+    }
+
+    & {
+
+        transition: all ease-in-out var(--transition-duration);
+    }
+}
+
+.do {
+
+    margin-bottom: var(--section-gap);
+
+    &__main-title {
+
+        @include typography (46px, 59.8px, 0.03em, 800);
+        margin-bottom: 47px;
+    }
+
+    &__list {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px 30px;
+    }
+
+    &__list-item {
+
+        padding: 35px 28px 55px;
+        box-shadow: var(--shadow-medium);
+        text-align: center;
+        transition: all ease-in-out var(--transition-duration);
+
+        @include hover {
+
+            background-color: var(--color-orange);
+        }
+    }
+
+    &__item-svg {
+
+        > path {
+
+            fill: #FF6B09;
+
+            @include do-hover {
+
+                fill: var(--color-white);
+            }
+        }
+    }
+
+    &__item-title {
+
+        @include typography (20px, 28px, 0.08em, 700);
+        max-width: 357px;
+        margin-bottom: 32px;
+        position: relative;
+
+        @include do-hover {
+
+            color: white;
+        }
+
+        &::after {
+
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: var(--color-orange);
+            position: absolute;
+            bottom: -13px;
+            @include x-center;
+
+            @include do-hover {
+
+                background-color: white;
+            }
+        }
+    }
+
+    &__item-text {
+
+        color: var(--color-gray);
+
+        @include do-hover {
+
+            color: white;
+        }
+    }
+}

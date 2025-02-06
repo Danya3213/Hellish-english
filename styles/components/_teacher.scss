@@ -1,0 +1,105 @@
+.teacher {
+
+    margin-bottom: 129px;
+
+    &__inner {
+
+        padding-right: 82px;
+        display: grid;
+        grid-template-columns: 530px 642px;
+        grid-column-gap: 60px;
+    }
+
+    &__main-title {
+
+        @include typography (46px, 59.8px, 0.03em, 800);
+        margin-bottom: 50px;
+    }
+
+    &__image {
+
+        width: 100%;
+    }
+
+    &__content {
+
+        position: relative;
+        top: 107px;
+
+        &::before {
+
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-gray);
+            position: absolute;
+            top: 52px;
+            left: 0;
+        }
+    }
+
+    &__name {
+
+        @include typography (30px, 36.57px, 0.08em, 800);
+        margin-bottom: 45px;
+    }
+
+    &__list {
+
+        max-width: 589px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-left: 60px;
+        margin-bottom: 88px;
+        position: relative;
+
+        &::after {
+
+            content: '';
+            position: absolute;
+            bottom: -43px;
+            left: -57px;
+            width: 20px;
+            height: 2px;
+            background-color: var(--color-orange);
+        }
+    }
+
+    &__list-item {
+
+        @include typography (16px, 19.5px, 0.06em, 600);
+        position: relative;
+        
+        &::before {
+
+            content: '';
+            position: absolute;
+            left: -57px;
+            width: 25px;
+            height: 20px;
+            background-image: url(../../images/check.png);
+        }
+    }
+
+    &__text {
+
+        @include typography (18px, 28px, 0, 500, var(--color-gray));
+
+        &:not(:last-of-type) {
+
+            margin-bottom: 28px;
+        }
+
+        &:last-of-type {
+
+            margin-bottom: 22px;
+        }
+    }
+
+    &__link {
+
+        @include typography (18px, 28px, 0, 500, var(--color-orange));
+        text-decoration: underline;
+    }
+}

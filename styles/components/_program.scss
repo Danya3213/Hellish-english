@@ -1,0 +1,125 @@
+.program {
+
+    margin-bottom: 324px;
+    background-color: var(--color-black);
+    position: relative;
+
+    &__inner {
+
+        padding: 120px 0 326px;
+    }
+
+    &__main-title {
+
+        @include typography (46px, 59.8px, 0.03em, 800, var(--color-white));
+        margin-bottom: 106px;
+    }
+
+    &__border {
+
+        width: 100vw;
+        height: 3px;
+        background-color: var(--color-white);
+        @include x-center;
+        top: 238px;
+    }
+    
+    &__content {
+
+        display: grid;
+        grid-template-columns: repeat(5, 226px);
+        justify-content: space-between;
+    }
+
+    &__semester {
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        &::before {
+
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: var(--color-orange);
+            border-radius: 50%;
+            position: relative;
+            top: -54px;
+            left: 0;
+        }
+    }
+
+    &__semester-number {
+
+        @include typography (30px, 28px, 0.08em, 700, var(--color-white));
+    }
+
+    &__semester-category {
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__semester__category-title {
+
+        @include typography (20px, 33px, 0.08em, 700, var(--color-orange));
+    }
+
+    &__semester__category-list {
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    &__semester__category__list-item {
+        
+        color: var(--color-gray-alt);
+    }
+
+    &__image {
+
+        width: 672px;
+        opacity: 50%;
+        position: absolute;
+        left: 0;
+        bottom: 14px;
+    }
+
+    &__card {
+
+        @include x-center;
+        bottom: -194px;
+        
+        padding: 67px 113px;
+        background-color: var(--color-white);
+
+        box-shadow: var(--shadow-small);
+    }
+
+    &__card-list {
+
+        display: grid;
+        grid-template-columns: repeat(3, 336px);
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 30px 40px;
+    }
+
+    &__card__list-item {
+
+        padding-bottom: 32px; 
+    }
+
+    &__card__item-title {
+
+        @include typography (20px, 33px, 0.08em, 700, var(--color-orange));
+        margin-bottom: 10px;
+    }
+
+    &__card__item-text {
+
+        @include typography (20px, 24px, 0.08em, 700);
+    }
+}

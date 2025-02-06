@@ -1,0 +1,58 @@
+.header {
+
+    margin: 30px 0;
+
+    @media (max-width: 1150px) {
+            
+        margin: 40px 0 35px;
+    }
+
+    &__inner {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__navigation {
+
+        display: flex;
+        gap: 60px;
+        align-items: center;
+
+        @media (max-width: 1150px) {
+            
+            gap: 40px;
+        }
+    }
+
+    &__list {
+
+        display: flex;
+        gap: 40px;
+
+        @media (max-width: 1150px) {
+            
+            display: none;
+        }
+    }
+
+    &__list-item {
+
+        @include typography (14px, 17px, 0, 700, var(--color-gray));
+        text-transform: uppercase;
+
+        @include hover {
+
+            color: var(--color-orange);
+        }
+    }
+
+    &__button--transparent {
+
+        @media (max-width: 600px) {
+            
+            display: none;
+        }
+    }
+}

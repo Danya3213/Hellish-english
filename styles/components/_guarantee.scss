@@ -1,0 +1,59 @@
+.guarantee {
+
+    margin-bottom: 130px;
+
+    &__main-title {
+
+        @include typography (46px, 59.8px, 0.03em, 800);
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__card {
+
+        padding: 50px 112px 45px;
+        background-color: var(--color-smoke);
+    }
+
+    &__list {
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__list-item {
+
+        display: flex;
+        gap: 30px;
+        position: relative;
+
+        &:not(:last-of-type) {
+
+            &::after {
+
+                content: '';
+                height: 40px;
+                position: absolute;
+                top: 32px;
+                left: 9px;
+                border-left: 1px dashed var(--color-gray);
+            }
+        }
+    }
+
+    &__image {
+
+        width: 21.6px;
+    }
+
+    &__text {
+
+        @include typography (20px, 28px, 0, 500, var(--color-black-alt));
+
+        > span {
+
+            color: var(--color-orange);
+        }
+    }
+}

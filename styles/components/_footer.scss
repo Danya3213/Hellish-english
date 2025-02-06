@@ -1,0 +1,39 @@
+.footer {
+
+    &__header {
+
+        padding-block: 52px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__navigation {
+
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__border {
+
+        width: 1px;
+        height: 40px;
+        background-color: var(--color-gray);
+    }
+
+    &__footer {
+
+        background-color: var(--color-black);
+    }
+
+    &__footer__container {
+
+        padding-block: 20px;
+    }
+    
+    &__subtitle {
+
+        @include typography (14px, 28px, 0, 500, var(--color-gray));
+    }
+}

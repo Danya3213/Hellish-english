@@ -1,0 +1,21 @@
+.burger-button {
+
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+
+    @media (max-width: 1150px) {
+            
+        display: block;
+    }
+
+    &-in {
+
+        width: 21px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: rgb(0, 0, 0);
+        box-shadow: 0 4px, 0 -4px;
+    }
+}

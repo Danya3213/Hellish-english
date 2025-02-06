@@ -1,0 +1,50 @@
+.container {
+    
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+}
+
+.section-title {
+
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 59.8px;
+    letter-spacing: 3em;
+}
+
+.hidden-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.visible-mobile {
+    @include mobile-above {
+        display: none !important;
+    }
+}
+
+.hidden-tablet {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+.visible-tablet {
+    @include tablet-above {
+        display: none !important;
+    }
+}
+
+.hidden-desktop {
+    @include desktop {
+        display: none !important;
+    }
+}
+
+.visible-desktop {
+    @include desktop-above {
+        display: none !important;
+    }
+}

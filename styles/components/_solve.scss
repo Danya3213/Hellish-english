@@ -1,0 +1,54 @@
+.solve {
+
+    margin-bottom: 280px;
+
+    background-image: url(../../images/campfire.svg);
+    background-color: var(--color-black);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 407px;
+
+    &__inner {
+
+        position: relative;
+        padding: 100px 0 280px;
+    }
+
+    &__main-title {
+
+        @include typography(46px, 59.8px, 0.03em, 800);
+        color: var(--color-white);
+        max-width: 807px;
+
+        > span {
+
+            color: var(--color-orange);
+        }
+    }
+
+    &__list {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 30px 40px;
+
+        background-color: var(--color-white);
+        padding: 67px 113px;
+
+        box-shadow: var(--shadow-small);
+
+        position: absolute;
+        bottom: -150px;
+    }
+
+    &__item-number {
+
+        @include typography (20px, 33px, 0.08em, 700, var(--color-orange));
+    }
+
+    &__item-text {
+
+        @include typography (20px, 24px, 0.08em, 700);
+    }
+}

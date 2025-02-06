@@ -1,0 +1,57 @@
+.registration {
+
+    background-image: linear-gradient(var(--color-black-transparent), var(--color-black-transparent)), url(../../images/studio.jpg);
+    background-size: cover;
+
+    &__inner {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 100px 0 62px;
+    }
+
+    &__main-title {
+
+        @include typography (46px, 59.8px, 0.03em, 800, var(--color-white));
+        max-width: 980px;
+        margin-bottom: 50px;
+
+        > span {
+
+            color: var(--color-orange);
+        }
+    }
+
+    &__subtitle {
+
+        @include typography (30px, 36.6px, 0.08em, 600, var(--color-white));
+        max-width: 1090px;
+        margin-bottom: 56px;
+
+        > span {
+
+            color: var(--color-orange);
+        }
+    }
+
+    &__input {
+
+        @include typography (20px, 24.4px, 0.08em, 600, var(--color-white));
+        padding: 23px 40px;
+        border: 1px solid var(--color-white);
+        background-color: transparent;
+        min-width: 478px;
+
+        &::placeholder {
+
+            color: var(--color-white);
+        }
+
+        &:last-of-type {
+
+            margin: 30px 0 80px;
+        }
+    }
+}

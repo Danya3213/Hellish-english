@@ -1,0 +1,121 @@
+.head {
+
+    margin-bottom: var(--section-gap);
+
+    @media (max-width: 1150px) {
+            
+        margin: 35px 0;
+    }
+
+    &__background {
+
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        min-width: 768px;
+    }
+
+    &__inner {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 50px;
+        justify-content: space-between;
+
+        @media (max-width: 800px) {
+            
+            grid-column-gap: 18px;
+        }
+
+        @media (max-width: 700px) {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__content {
+
+        margin-top: 55px;
+
+        @media (max-width: 1150px) {
+            
+            margin-top: 0;
+        }
+    }
+
+    &__main-title {
+
+        @include typography (58px, 75.4px, 0.03em, 800);
+
+        // @include fluid-text (58, 20);
+        
+        @media (max-width: 1150px) {
+            
+            font-size: 26px;
+            line-height: 33.8px;
+        }
+
+        @media (max-width: 780px) {
+            
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+
+    &__image {
+
+        position: relative;
+        right: -108px;
+        width: 100%;
+        min-width: 210px;
+        transition: all var(--transition-duration);
+
+        @media (max-width: 1585px) {
+            
+            right: 0px;
+        }
+
+        @media (max-width: 780px) {
+            
+            max-width: 500px;
+        }
+    }
+
+    &__subtitle {
+
+        @include typography (20px, 33px, 0.08em, 700);
+        margin: 15px 0 45px;
+
+        @media (max-width: 1150px) {
+            
+            font-size: 14px;
+            background-image: linear-gradient();
+        }
+
+        > span {
+
+            font-weight: 500;
+            color: var(--color-gray);
+        }
+
+        > b {
+
+            @media (max-width: 925px) {
+                
+                color: var(--color-orange);
+            }
+        }
+    }
+
+    &__button--orange {
+
+        @media (max-width: 780px) {
+            
+            
+        }
+    }
+}

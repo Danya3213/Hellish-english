@@ -1,0 +1,56 @@
+.sabout {
+
+    margin-bottom: var(--section-gap);
+
+    &__list {
+
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__list-item {
+
+        padding-right: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item__svg-container {
+
+        padding: 27px 30px;
+        border: 2px solid var(--color-orange);
+        position: relative;
+
+        &::after {
+
+            content: '';
+            right: -2px;
+            @include y-center;
+            height: 66px;
+            width: 2px;
+            background-color: white;
+        }
+    }
+
+    &__item__text-container {
+
+        position: relative;
+        left: -17px;
+        background-color: transparent;
+        padding: 10px 0;
+    }
+
+    &__item-svg {
+
+        & path {
+
+            fill: var(--color-orange);
+        }
+    }
+
+    &__item__text {
+
+        @include typography(20px, 33px, 0.08em, 700);
+    }
+}

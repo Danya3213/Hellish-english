@@ -1,0 +1,35 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    &__header {
+
+        display: flex;
+        gap: 3px;
+    }
+
+    &__title {
+
+        @include typography (26px, 31.7px, 0.04em, 800);
+    }
+
+    &-svg {
+
+        > path {
+
+            fill: var(--color-orange);
+        }
+    }
+
+    &__subtitle {
+
+        @include typography (8px, 9.75px, 0.18em, 700);
+        text-transform: uppercase;
+
+        > span {
+
+            color: var(--color-orange);
+        }
+    }
+}

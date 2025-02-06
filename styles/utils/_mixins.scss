@@ -1,0 +1,66 @@
+@use 'sass:math';
+
+@mixin circle {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@mixin abs-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin x-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin y-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin typography ($font-size, $line-height, $letter-spacing: 0.08em, $font-weight: 500, $color: var(--color-black)) {
+
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+
+@mixin fluid-text($max, $min) {
+  $maxViewportWidth: 1400;
+  $minViewportWidth: 360;
+
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  font-size: clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+// @mixin scroll ($delay: 0s, $duration: 0.8s) {
+
+//     transition: all $duration ease-in-out $delay;
+//     @content;
+
+//     &._active {
+
+//         transform: translate(0, 0);
+//         opacity: 1;
+//     }
+// }

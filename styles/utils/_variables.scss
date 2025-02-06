@@ -1,0 +1,23 @@
+:root {
+    --color-black: rgb(17, 21, 24);
+    --color-black-transparent: rgba(17, 21, 24, 0.8);
+    --color-black-alt: rgb(61, 61, 61);
+    --color-orange: rgb(255, 107, 9);
+    --color-white: rgb(255, 255, 255);
+    --color-gray: rgb(185, 185, 185);
+    --color-gray-alt: rgb(101, 103, 104);
+    --color-smoke: rgb(241, 241, 241);
+
+    --font-family-base: 'Montserrat';
+
+    --container-width: 1314px;
+    --container-padding-x: 20px;
+
+    --transition-duration: 0.2s;
+
+    --section-gap: 130px;
+
+    --shadow-small: -5px 8px 26px rgba(0, 0, 0, 0.04);
+    --shadow-medium: 0 8px 26px rgba(0, 0, 0, 0.1);
+    --shadow-large: -5px 21px 26px rgba(0, 0, 0, 0.4);
+}

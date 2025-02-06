@@ -1,0 +1,26 @@
+// @use
+
+@import
+    './utils/reset',
+    './utils/fonts',
+    './utils/variables',
+    './utils/mixins',
+    './utils/globals',
+    './utils/media',
+    './utils/utils';
+
+@import
+    './components/header',
+    './components/logo',
+    './components/burger-button',
+    './components/button',
+    './components/head',
+    './components/sabout',
+    './components/solve',
+    './components/do',
+    './components/program',
+    './components/teacher',
+    './components/guarantee',
+    './components/feedback',
+    './components/registration',
+    './components/footer'
