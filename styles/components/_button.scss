@@ -6,6 +6,8 @@ button {
     @include typography (14px, 17px, 0.14em, 700);
     text-transform: uppercase;
 
+    transition: background-color var(--transition-duration) ease-in-out;
+
     &[class*="--transparent"] {
 
         @include hover {

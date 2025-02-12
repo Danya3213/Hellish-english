@@ -1,12 +1,25 @@
 .feedback {
 
     margin-bottom: 130px;
+    padding-bottom: 94px;
+    overflow: hidden;
+
+    &__inner {
+
+        position: relative;
+}
 
     &__main-title {
 
         @include typography (46px, 59.8px, 0.03em, 800);
         text-align: center;
         margin-bottom: 50px;
+    }
+
+    &__comment {
+
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
     &__comment-images {
@@ -18,35 +31,56 @@
         margin-top: 32px;
     }
 
-    &__comment {
+    &__comment-inner {
 
         padding: 50px 82px;
         box-shadow: var(--shadow-small);
         display: flex;
         gap: 40px;
         position: relative;
+    }
 
-        &::before, &::after {
+    &__arrow--left, &__arrow--right {
 
-            content: '';
-            width: 30px;
-            height: 20px;
-            background-image: url(../../images/arrow-next.svg);
-            background-position: center;
-            background-repeat: no-repeat;
-            @include y-center;
-            cursor: pointer;
-        }
-
-        &::before {
-
-            left: -80px;
-            transform: scaleX(-1);
-        }
+        width: 27px;
+        height: 16px;
+        background-image: url(../../images/arrow-next.svg);
+        background-position: center;
+        background-repeat: no-repeat;
 
         &::after {
+        
+            color: transparent;
+        }
+    }
 
-            right: -80px;
+    &__arrow--left {
+
+        right: -58px;
+    }
+
+    &__arrow--right {
+
+        left: -58px;
+        transform: scaleX(-1);
+    }
+
+    &__pagination {
+
+        & span {
+
+            background-color: var(--color-orange);
+            width: 54px;
+            height: 54px;
+            @include circle;
+            background-position: center;
+            background-size: cover;
+            opacity: 1;
+
+            &.swiper-pagination-bullet-active {
+
+                border: 1px solid var(--color-orange);
+            }
         }
     }
 

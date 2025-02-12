@@ -6,8 +6,9 @@
 
         padding-right: 82px;
         display: grid;
-        grid-template-columns: 530px 642px;
-        grid-column-gap: 60px;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        justify-content: space-between;
     }
 
     &__main-title {
@@ -19,12 +20,14 @@
     &__image {
 
         width: 100%;
+        max-width: 530px;
     }
 
     &__content {
 
         position: relative;
         top: 107px;
+        max-width: 642px;
 
         &::before {
 

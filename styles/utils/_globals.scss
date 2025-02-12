@@ -2,9 +2,8 @@ body {
     
     font-family: var(--font-family-base);
     @include typography (18px, 28px, 0.08em, 500);
-    color: var(--color-black);
     background-color: var(--color-white);
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
 
 a, button, input, textarea, svg * {

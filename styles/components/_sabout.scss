@@ -27,6 +27,7 @@
             content: '';
             right: -2px;
             @include y-center;
+            z-index: 0;
             height: 66px;
             width: 2px;
             background-color: white;
