@@ -9,12 +9,25 @@
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 10px;
         justify-content: space-between;
+
+        @media (max-width: 800px) {
+         
+            grid-template-columns: 1fr;
+            justify-content: start;
+            padding-right: 0;
+        }
     }
 
     &__main-title {
 
         @include typography (46px, 59.8px, 0.03em, 800);
         margin-bottom: 50px;
+
+        @media (max-width: 800px) {
+         
+            @include typography (40px, 55px, 0.03em, 800);
+            margin-bottom: 30px;
+        }
     }
 
     &__image {
@@ -28,6 +41,11 @@
         position: relative;
         top: 107px;
         max-width: 642px;
+
+        @media (max-width: 800px) {
+         
+            top: 67px;
+        }
 
         &::before {
 
@@ -45,6 +63,12 @@
 
         @include typography (30px, 36.57px, 0.08em, 800);
         margin-bottom: 45px;
+
+        @media (max-width: 800px) {
+         
+            @include typography (24px, 55px, 0.03em, 800);
+            margin-bottom: 30px;
+        }
     }
 
     &__list {
@@ -57,6 +81,11 @@
         margin-bottom: 88px;
         position: relative;
 
+        @media (max-width: 800px) {
+         
+            margin-left: 40px;
+        }
+
         &::after {
 
             content: '';
@@ -66,6 +95,11 @@
             width: 20px;
             height: 2px;
             background-color: var(--color-orange);
+
+            @media (max-width: 800px) {
+         
+                left: -37px;
+            }
         }
     }
 
@@ -73,6 +107,11 @@
 
         @include typography (16px, 19.5px, 0.06em, 600);
         position: relative;
+
+        @media (max-width: 800px) {
+         
+            @include typography (12px, 15px, 0.06em, 600);
+        }
         
         &::before {
 
@@ -82,6 +121,14 @@
             width: 25px;
             height: 20px;
             background-image: url(../../images/check.png);
+            background-size: cover;
+
+            @media (max-width: 800px) {
+         
+                left: -37px;
+                width: 18px;
+                height: 14px;
+            }
         }
     }
 
@@ -89,14 +136,29 @@
 
         @include typography (18px, 28px, 0, 500, var(--color-gray));
 
+        @media (max-width: 800px) {
+         
+            @include typography (10px, 20px, 0, 500, var(--color-gray));
+        }
+
         &:not(:last-of-type) {
 
             margin-bottom: 28px;
+
+            @media (max-width: 800px) {
+         
+                margin-bottom: 15px;
+            }
         }
 
         &:last-of-type {
 
             margin-bottom: 22px;
+
+            @media (max-width: 800px) {
+         
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -104,5 +166,10 @@
 
         @include typography (18px, 28px, 0, 500, var(--color-orange));
         text-decoration: underline;
+
+        @media (max-width: 800px) {
+         
+            @include typography (12px, 20px, 0, 500, var(--color-orange));
+        }
     }
 }

@@ -1,28 +1,60 @@
 .solve {
 
-    margin-bottom: 280px;
+    &__header {
 
-    background-image: url(../../images/campfire.svg);
-    background-color: var(--color-black);
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 407px;
-
-    &__inner {
-
-        position: relative;
+        background-image: url(../../images/campfire.svg);
+        background-color: var(--color-black);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 407px;
         padding: 100px 20px 280px;
+
+        @media (max-width: 780px) {
+            
+            background-size: 350px;
+        }
+
+        @media (max-width: 600px) {
+            
+            background-image: none;
+        }
     }
 
     &__main-title {
 
-        @include typography(46px, 59.8px, 0.03em, 800);
-        color: var(--color-white);
+        @include typography(46px, 59.8px, 0.03em, 800, var(--color-white));
         max-width: 807px;
 
         > span {
 
             color: var(--color-orange);
+        }
+
+        @media (max-width: 1200px) {
+            
+            @include typography(38px, 49px, 0.03em, 800, var(--color-white));
+        }
+
+        @media (max-width: 1050px) {
+            
+            @include typography(35px, 46px, 0.03em, 800, var(--color-white));
+            max-width: 614px;
+        }
+        
+        @media (max-width: 1050px) {
+            
+            @include typography(30px, 38px, 0.03em, 800, var(--color-white));
+            max-width: 481px;
+        }
+
+        @media (max-width: 760px) {
+            
+            @include typography(24px, 31.2px, 0.03em, 800, var(--color-white));
+        }
+        
+        @media (max-width: 400px) {
+            
+            @include typography(20px, 24.2px, 0.03em, 800, var(--color-white));
         }
     }
 
@@ -30,25 +62,60 @@
 
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
         grid-gap: 30px 40px;
+        left: 0;
 
         background-color: var(--color-white);
         padding: 67px 113px;
 
         box-shadow: var(--shadow-small);
 
-        position: absolute;
-        bottom: -150px;
+        position: relative;
+        bottom: 220px;
+
+        @media (max-width: 1180px) {
+
+            padding: 28px 90px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 20px 68px;
+            bottom: 250px;
+        }
+
+        @media (max-width: 600px) {
+            
+            padding: 20px 27px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            grid-gap: 15px 0;
+        }
     }
 
     &__item-number {
 
         @include typography (20px, 33px, 0.08em, 700, var(--color-orange));
+        margin-bottom: 10px;
+
+        @media (max-width: 930px) {
+
+            @include typography (20px, 24.38px, 0.08em, 700, var(--color-orange));
+            margin-bottom: 5px;
+
+            > span {
+
+                @include typography (16px, 17.07px, 0.08em, 700, var(--color-orange));
+            }
+        }
     }
 
     &__item-text {
 
         @include typography (20px, 24px, 0.08em, 700);
+
+        @media (max-width: 930px) {
+
+            @include typography (14px, 20px, 0.08em, 700);
+        }
     }
 }

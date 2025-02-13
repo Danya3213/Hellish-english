@@ -2,6 +2,11 @@
 
     margin-bottom: var(--section-gap);
 
+    @include tablet () {
+
+        margin-bottom: var(--section-gap-tablet);
+    }
+
     @media (max-width: 1150px) {
             
         margin: 35px 0;

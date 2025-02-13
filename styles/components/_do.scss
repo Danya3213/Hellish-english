@@ -15,10 +15,42 @@
 
     margin-bottom: var(--section-gap);
 
+    @include tablet {
+
+        margin-bottom: var(--section-gap-tablet);
+    }
+
+    @media (max-width: 400px) {
+        
+        margin-bottom: 40px;
+    }
+
+    margin-top: -80px;
+
+    @include tablet () {
+
+        margin-top: -140px;
+    }
+
     &__main-title {
 
         @include typography (46px, 59.8px, 0.03em, 800);
         margin-bottom: 47px;
+
+        @media (max-width: 1000px) {
+            
+            text-align: center;
+        }
+
+        @media (max-width: 460px) {
+            
+            @include typography (34px, 40px, 0.03em, 800);
+        }
+
+        @media (max-width: 350px) {
+            
+            @include typography (26px, 34px, 0.03em, 800);
+        }
     }
 
     &__list {
@@ -27,14 +59,32 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr 1fr;
         grid-gap: 20px 30px;
+
+        @media (max-width: 900px) {
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+            grid-gap: 15px;
+        }
     }
 
     &__list-item {
 
         padding: 35px 28px 55px;
         box-shadow: var(--shadow-medium);
-        text-align: center;
         transition: all ease-in-out var(--transition-duration);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 
         @include hover {
 
@@ -61,6 +111,11 @@
         max-width: 357px;
         margin-bottom: 32px;
         position: relative;
+
+        @media (max-width: 440px) {
+            
+            // @include typography (14px, 20px, 0.08em, 700);
+        }
 
         @include do-hover {
 

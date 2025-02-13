@@ -1,7 +1,7 @@
 .feedback {
 
-    margin-bottom: 130px;
-    padding-bottom: 94px;
+    margin-bottom: 120px;
+    padding-bottom: 104px;
     overflow: hidden;
 
     &__inner {
@@ -67,6 +67,10 @@
 
     &__pagination {
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         & span {
 
             background-color: var(--color-orange);
@@ -114,5 +118,13 @@
 
         @include typography (18px, 28px, 0, 500, var(--color-orange));
         text-decoration: underline;
+    }
+
+    & .swiper-pagination-bullet {
+
+        position: relative;
+        top: 0px;
+        background-position: top;
+        box-sizing: content-box;
     }
 }
