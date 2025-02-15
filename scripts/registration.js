@@ -9,29 +9,29 @@ let statusReady = false;
 
 async function formSend() {
 
-    // let formData = new FormData(form);
+    let formData = new FormData(form);
 
     if (!formValCheck()) {
 
         form.classList.add('_sending');
 
-        // let response = await fetch('sendmail.php', {
+        let response = await fetch('sendmail.php', {
 
-        //     method: 'POST',
-        //     body: formData
-        // });
+            method: 'POST',
+            body: formData
+        });
 
-        // if (response.ok) {
+        if (response.ok) {
 
-        //     let result = await response.json();
-        //     alert(result.message);
-        //     formReset();
-        //     form.classList.remove('_sending');
-        // } else {
+            let result = await response.json();
+            alert(result.message);
+            formReset();
+            form.classList.remove('_sending');
+        } else {
 
-        //     alert(`Error, form didn't send`);
-        //     form.classList.remove('_sending');
-        // }
+            alert(`Error, form didn't send`);
+            form.classList.remove('_sending');
+        }
     }
 }
 
