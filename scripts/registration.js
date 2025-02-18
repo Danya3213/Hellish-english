@@ -8,28 +8,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let statusReady = false;
 
-    async function formSend() {
-        let formData = new FormData(form);
-
-        if (!formValCheck()) {
-            form.classList.add('_sending');
-
-            let response = await fetch('../sendmail.php', {
-                method: 'POST',
-                body: formData
+    submitBtn.addEventListener('click', async (e) => {
+        e.preventDefault(); // Заборона стандартної поведінки форми
+    
+        if (formValCheck() === 0) {
+          const formData = {
+            name: nameInput.value,
+            email: emailInput.value,
+            message: commentTextarea.value,
+          };
+    
+          try {
+            const response = await fetch('/.netlify/functions/sendEmail', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
             });
-
+    
+            const result = await response.json();
+            alert(result.message);
+    
             if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                formReset();
-                form.classList.remove('_sending');
-            } else {
-                alert(`Error, form didn't send`);
-                form.classList.remove('_sending');
+              formReset();
             }
+          } catch (error) {
+            alert('Помилка, форма не відправлена');
+          }
+        } else {
+          alert('Будь ласка, введіть коректні дані');
         }
-    }
+      });
 
     submitBtn.onclick = () => {
         if (formValCheck() === 0) {
