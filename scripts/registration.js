@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
           };
     
           try {
-            const response = await fetch('/.netlify/functions/sendEmail', {
+            const response = await fetch('../netlify/functions/sendEmail', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

@@ -17,8 +17,9 @@ exports.handler = async (event) => {
 
   // Налаштування листа
   const msg = {
-    to: 'ваша_пошта@gmail.com', // Ваша електронна пошта
-    from: 'ваша_пошта@gmail.com', // Відправник (має бути підтверджений у SendGrid)
+    
+    to: 'dn0992947530@gmail.com', // Ваша електронна пошта
+    from: 'dn0992947530@gmail.com', // Відправник (має бути підтверджений у SendGrid)
     subject: 'Нове повідомлення з форми',
     text: `Ім'я: ${name}\nEmail: ${email}\nПовідомлення: ${message}`,
     html: `<strong>Ім'я:</strong> ${name}<br><strong>Email:</strong> ${email}<br><strong>Повідомлення:</strong> ${message}`,
