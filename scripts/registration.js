@@ -1,3 +1,42 @@
+
+const sendEmail = async () => {
+  const apiKeyPublic = '09152252ee0598acd703208d098ecb6a';
+  const apiKeyPrivate = 'a75af7f91d1d7c136b7cb3bc86cfb3b9';
+  const auth = btoa(`${apiKeyPublic}:${apiKeyPrivate}`);
+
+  const response = await fetch('https://api.mailjet.com/v3/send', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Basic ${auth}`
+      },
+      body: JSON.stringify({
+          FromEmail: 'danya@dev.com',
+          FromName: 'Danya test',
+          Subject: 'Test',
+          "Text-part": 'Test',
+          "Html-part": 'Test',
+          Recipients: [{ Email: 'vladarduino@gmail.com' }]
+      })
+  });
+
+  const data = await response.json();
+  console.log(data);
+};
+
+sendEmail();
+
+  // const email = {
+  //   from: 'test@example.com',
+  //   to: 'vladarduino@gmail.com',
+  //   subject: 'Test email',
+  //   text: 'This is a test email sent from the browser'
+  // }
+  // smtp.sendMail(email)
+  //   .then(info => console.log(info))
+  //   .catch(err => console.error(err))
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.querySelector('#registrationNameInput');
     const phoneInput = document.querySelector('#registrationPhoneInput');
