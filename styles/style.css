@@ -1594,7 +1594,7 @@ button[class*="--orange"], button[class*="--orange"]:active {
   opacity: 0;
   visibility: hidden;
 }
-.registration__form._sending {
+.registration__form._sending::after {
   opacity: 1;
   visibility: visible;
 }

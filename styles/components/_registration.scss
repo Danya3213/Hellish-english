@@ -57,7 +57,7 @@
             visibility: hidden;
         }
 
-        &._sending {
+        &._sending::after {
 
             opacity: 1;
             visibility: visible;

@@ -515,12 +515,12 @@
             <div class="registration__inner container">
                 <h1 class="registration__main-title">Registration for a <span>free</span> phone <span>consultation</span> on the nuances of English UPE</h1>
                 <h3 class="registration__subtitle">Leave a request for participation in a <span>free lesson</span>. <br> A consultant will contact you and answer your questions</h3>
-                <div class="registration__form" id="form">
-                    <input class="registration__input" type="text" placeholder="Name*" id="registrationNameInput">
-                    <input class="registration__input" type="tel" placeholder="Phone*" id="registrationPhoneInput">
-                    <input class="registration__input" type="email" placeholder="Email*" id="registrationEmailInput">
-                    <textarea class="registration__textarea" id="comment" placeholder="Comment"></textarea>
-                </div>
+                <form class="registration__form" id="form">
+                    <input class="registration__input" type="text" placeholder="Name*" id="registrationNameInput" name="name">
+                    <input class="registration__input" type="tel" placeholder="Phone*" id="registrationPhoneInput"  name="phone">
+                    <input class="registration__input" type="email" placeholder="Email*" id="registrationEmailInput" name="email">
+                    <textarea class="registration__textarea" id="comment" placeholder="Comment" name="comment"></textarea>
+                </form>
                 <button class="registration__button--orange button--orange" id="registrationSubmitBtn">I want a free lesson</button>
             </div>
         </section>
