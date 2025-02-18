@@ -5,12 +5,10 @@ const sendEmail = async () => {
 
   try {
       const response = await axios.post('https://api.mailjet.com/v3/send', {
-          FromEmail: 'dn0992947530@gmail.com',
-          FromName: 'Danya test',
+          From: 'dn0992947530@gmail.com',
           Subject: 'Test',
-          "Text-part": 'Test',
-          "Html-part": 'Test',
-          Recipients: [{ Email: 'vladarduino@gmail.com' }]
+          Text: 'Test',
+          To: 'vladarduino@gmail.com'
       }, {
           headers: {
               'Content-Type': 'application/json',
