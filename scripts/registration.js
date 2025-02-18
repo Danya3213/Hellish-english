@@ -1,28 +1,19 @@
-const sendEmail = async () => {
-  const apiKeyPublic = '09152252ee0598acd703208d098ecb6a';
-  const apiKeyPrivate = 'a75af7f91d1d7c136b7cb3bc86cfb3b9';
-  const auth = btoa(`${apiKeyPublic}:${apiKeyPrivate}`);
+const formData = new FormData();
+formData.append("From", "dn0992947530@gmail.com");
+formData.append("FromName", "Danya test");
+formData.append("Subject", "Test");
+formData.append("To", "vladarduino@gmail.com");
+formData.append("Text", "test");
 
-  try {
-      const response = await axios.post('https://api.mailjet.com/v3/send', {
-          From: 'dn0992947530@gmail.com',
-          Subject: 'Test',
-          Text: 'Test',
-          To: 'vladarduino@gmail.com'
-      }, {
-          headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Basic ${auth}`
-          }
-      });
-      
-      console.log(response.data);
-  } catch (error) {
-      console.error(error.response ? error.response.data : error.message);
+axios.post("https://api.mailjet.com/v3/send", formData, {
+  headers: {
+    "Authorization": "Basic MDkxNTIyNTJlZTA1OThhY2Q3MDMyMDhkMDk4ZWNiNmE6YTc1YWY3ZjkxZDFkN2MxMzZiN2NiM2JjODZjZmIzYjk=",
+    'Content-Type': 'application/json'
   }
-};
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
 
-sendEmail();
 
   // const email = {
   //   from: 'test@example.com',
