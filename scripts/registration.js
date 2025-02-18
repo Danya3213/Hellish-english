@@ -41,19 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-    submitBtn.onclick = () => {
-        if (formValCheck() === 0) {
-            if (statusReady) {
-                formSend();
-            }
+    // submitBtn.onclick = () => {
+    //     if (formValCheck() === 0) {
+    //         if (statusReady) {
+                
 
-            submitBtn.textContent = `All is right. Let's start?`;
-            statusReady = true;
-        } else {
-            submitBtn.textContent = `I WANT A FREE LESSON`;
-            alert('Введіть коректні дані');
-        }
-    }
+    //         }
+
+    //         submitBtn.textContent = `All is right. Let's start?`;
+    //         statusReady = true;
+    //     } else {
+    //         submitBtn.textContent = `I WANT A FREE LESSON`;
+    //         alert('Введіть коректні дані');
+    //     }
+    // }
 
     function formValCheck() {
         let nameInputValue = nameInput.value;
