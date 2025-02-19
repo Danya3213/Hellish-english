@@ -5,40 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentTextarea = document.querySelector('#comment');
     const form = document.querySelector('#form');
     const submitBtn = document.querySelector('#registrationSubmitBtn');
+    
+    function sendEmail() {
+      Email.send({
+          Host: "smtp.gmail.com",
+          Username: "dn0992947530@gmail.com",
+          Password: "vvob phvf gxjx vgev",
+          To: 'dn0992947530@gmail.com',
+          From: "dn0992947530@gmail.com",
+          Subject: "Test Email",
+          Body: "This is a test email sent using SMTP.js"
+      })
+      .then(function (message) {
+          alert("Mail sent successfully") // Alert message on successful email delivery
+      });
+  }
+
 
     let statusReady = false;
 
     submitBtn.addEventListener('click', async (e) => {
-        e.preventDefault(); // Заборона стандартної поведінки форми
-    
-        if (formValCheck() === 0) {
-          const formData = {
-            name: nameInput.value,
-            email: emailInput.value,
-            message: commentTextarea.value,
-          };
-    
-          try {
-            const response = await fetch('../.netlify/functions/sendEmail', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(formData),
-            });
-    
-            const result = await response.json();
-            alert(result.message);
-    
-            if (response.ok) {
-              formReset();
-            }
-          } catch (error) {
-            alert('Помилка, форма не відправлена');
-          }
-        } else {
-          alert('Будь ласка, введіть коректні дані');
-        }
+        
+        sendEmail();
+        console.log(1);
+        
       });
 
     // submitBtn.onclick = () => {
