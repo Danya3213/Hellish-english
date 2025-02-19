@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let formData = new FormData(form);
   
-      fetch("https://formsubmit.co/ajax/dn0992947539@gmail.com", {
+      fetch("https://formsubmit.co/ajax/dn0992947530@gmail.com", {
           method: "POST",
           body: formData
       })
