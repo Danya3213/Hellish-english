@@ -1,3 +1,31 @@
+const formData = new FormData();
+formData.append("From", "dn0992947530@gmail.com");
+formData.append("FromName", "Danya test");
+formData.append("Subject", "Test");
+formData.append("To", "vladarduino@gmail.com");
+formData.append("Text", "test");
+
+axios.post("https://api.mailjet.com/v3/send", formData, {
+  headers: {
+    "Authorization": "Basic MDkxNTIyNTJlZTA1OThhY2Q3MDMyMDhkMDk4ZWNiNmE6YTc1YWY3ZjkxZDFkN2MxMzZiN2NiM2JjODZjZmIzYjk=",
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => console.log(response.data))
+.catch(error => console.error(error));
+
+
+  // const email = {
+  //   from: 'test@example.com',
+  //   to: 'vladarduino@gmail.com',
+  //   subject: 'Test email',
+  //   text: 'This is a test email sent from the browser'
+  // }
+  // smtp.sendMail(email)
+  //   .then(info => console.log(info))
+  //   .catch(err => console.error(err))
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.querySelector('#registrationNameInput');
     const phoneInput = document.querySelector('#registrationPhoneInput');
