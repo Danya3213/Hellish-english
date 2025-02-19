@@ -1,31 +1,3 @@
-const formData = new FormData();
-formData.append("From", "dn0992947530@gmail.com");
-formData.append("FromName", "Danya test");
-formData.append("Subject", "Test");
-formData.append("To", "vladarduino@gmail.com");
-formData.append("Text", "test");
-
-axios.post("https://api.mailjet.com/v3/send", formData, {
-  headers: {
-    "Authorization": "Basic MDkxNTIyNTJlZTA1OThhY2Q3MDMyMDhkMDk4ZWNiNmE6YTc1YWY3ZjkxZDFkN2MxMzZiN2NiM2JjODZjZmIzYjk=",
-    'Content-Type': 'application/json'
-  }
-})
-.then(response => console.log(response.data))
-.catch(error => console.error(error));
-
-
-  // const email = {
-  //   from: 'test@example.com',
-  //   to: 'vladarduino@gmail.com',
-  //   subject: 'Test email',
-  //   text: 'This is a test email sent from the browser'
-  // }
-  // smtp.sendMail(email)
-  //   .then(info => console.log(info))
-  //   .catch(err => console.error(err))
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const nameInput = document.querySelector('#registrationNameInput');
     const phoneInput = document.querySelector('#registrationPhoneInput');
@@ -33,41 +5,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentTextarea = document.querySelector('#comment');
     const form = document.querySelector('#form');
     const submitBtn = document.querySelector('#registrationSubmitBtn');
-    
-    function sendEmail() {
-      Email.send({
-          Host: "smtp.gmail.com",
-          Username: "dn0992947530@gmail.com",
-          Password: "vvob phvf gxjx vgev",
-          To: 'dn0992947530@gmail.com',
-          From: "dn0992947530@gmail.com",
-          Subject: "Test Email",
-          Body: "This is a test email sent using SMTP.js"
-      })
-      .then(function (message) {
-          alert("Mail sent successfully") // Alert message on successful email delivery
-      });
-  }
-
-
     let statusReady = false;
 
-    submitBtn.addEventListener('click', async (e) => {
-        
-        sendEmail();
-        console.log(1);
-        
-      });
+    function listSend(event) {
+      event.preventDefault(); // Зупиняємо стандартну відправку форми
+
+      let formData = new FormData(form);
+  
+      fetch("https://formsubmit.co/ajax/dn0992947539@gmail.com", {
+          method: "POST",
+          body: formData
+      })
+      .then(response => response.json())
+      .then(data => alert("Форма успішно відправлена!"))
+      .catch(error => alert("Помилка при відправці"));
+    };
+
+    submitBtn.addEventListener("click", (event) => {
+
+      if (formValCheck() === 0) {
+
+            if (statusReady) {
+                
+              listSend(event); // Передаємо event
+            }
+
+          submitBtn.textContent = `All is right. Let's start?`;
+          statusReady = true;
+
+        } else {
+
+          submitBtn.textContent = `I WANT A FREE LESSON`;
+          alert('Введіть коректні дані');
+      }
+    });
 
     // submitBtn.onclick = () => {
     //     if (formValCheck() === 0) {
+    //         statusReady = true;
+
     //         if (statusReady) {
                 
-
+    //           listSend();
     //         }
 
-    //         submitBtn.textContent = `All is right. Let's start?`;
-    //         statusReady = true;
+    //            submitBtn.textContent = `All is right. Let's start?`;
     //     } else {
     //         submitBtn.textContent = `I WANT A FREE LESSON`;
     //         alert('Введіть коректні дані');
